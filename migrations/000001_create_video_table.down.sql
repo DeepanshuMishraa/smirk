@@ -1,0 +1,2 @@
+DROP TYPE IF EXISTS video_status;
+DROP TABLE IF EXISTS videos;

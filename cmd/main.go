@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/DeepanshuMishraa/vid-processing-go.git/config"
+	"github.com/DeepanshuMishraa/vid-processing-go.git/db"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,6 +16,12 @@ func main() {
 	}
 
 	log.Println("Loaded Env Variables")
+
+	_, err = db.Connect(cfg.DATABASE_URL)
+
+	if err != nil {
+		log.Fatalf("Failed to connect to database: %v", err)
+	}
 
 	router := gin.Default()
 	router.SetTrustedProxies(nil)
