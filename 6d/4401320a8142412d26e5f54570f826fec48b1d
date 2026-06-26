@@ -1,0 +1,34 @@
+utils/r2.go
+  s_82eb054ecf916e::t_06adf6c0b5f161 13
+  s_82eb054ecf916e::t_3b92ad0fd43b65 60-62,68
+  s_82eb054ecf916e::t_acaf98a340d6db 7-8,20-22,25,30,32-59,65-66,71,74
+  s_82eb054ecf916e::t_42fc2277dd3a86 15
+  s_82eb054ecf916e::t_2a903ee1be355a 24,26
+  s_82eb054ecf916e::t_c04cffd1cf965d 4-6
+  s_82eb054ecf916e::t_0f7f35891fd172 9-12
+  s_82eb054ecf916e::t_de522eb3df6b37 14
+  s_82eb054ecf916e::t_14517e6877bef2 16-19
+  s_82eb054ecf916e::t_1dbde2b33aeeac 23
+  s_82eb054ecf916e::t_680eec541603b3 27-29
+  s_82eb054ecf916e::t_e50e563f8b8a79 31
+  s_82eb054ecf916e::t_97ff8c6ad0dd8c 63-64
+  s_82eb054ecf916e::t_aae77006d008f9 67
+  s_82eb054ecf916e::t_60b8e123a6ed8a 69-70
+  s_82eb054ecf916e::t_f62e4749e607c1 72-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "6d4401320a8142412d26e5f54570f826fec48b1d",
+  "prompts": {},
+  "sessions": {
+    "s_82eb054ecf916e": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019f041d-73b7-70f8-9fb3-f3774a4fd79b",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
