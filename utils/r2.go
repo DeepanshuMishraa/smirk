@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/DeepanshuMishraa/vid-processing-go.git/config"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/types"
+	"github.com/DeepanshuMishraa/smirk/config"
+	"github.com/DeepanshuMishraa/smirk/types"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	awsconfig "github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"

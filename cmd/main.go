@@ -3,12 +3,12 @@ package main
 import (
 	"log"
 
-	"github.com/DeepanshuMishraa/vid-processing-go.git/config"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/db"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/handlers"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/queue"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/utils"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/worker"
+	"github.com/DeepanshuMishraa/smirk/config"
+	"github.com/DeepanshuMishraa/smirk/db"
+	"github.com/DeepanshuMishraa/smirk/handlers"
+	"github.com/DeepanshuMishraa/smirk/queue"
+	"github.com/DeepanshuMishraa/smirk/utils"
+	"github.com/DeepanshuMishraa/smirk/worker"
 	"github.com/gin-gonic/gin"
 )
 

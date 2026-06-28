@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/DeepanshuMishraa/vid-processing-go.git/models"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/queue"
+	"github.com/DeepanshuMishraa/smirk/models"
+	"github.com/DeepanshuMishraa/smirk/queue"
 	"github.com/jackc/pgx/v5/pgxpool"
 	amqp "github.com/rabbitmq/amqp091-go"
 )

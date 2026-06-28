@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/DeepanshuMishraa/vid-processing-go.git/types"
+	"github.com/DeepanshuMishraa/smirk/types"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 

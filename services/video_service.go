@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/DeepanshuMishraa/vid-processing-go.git/models"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/repository"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/types"
-	"github.com/DeepanshuMishraa/vid-processing-go.git/utils"
+	"github.com/DeepanshuMishraa/smirk/models"
+	"github.com/DeepanshuMishraa/smirk/repository"
+	"github.com/DeepanshuMishraa/smirk/types"
+	"github.com/DeepanshuMishraa/smirk/utils"
 	"github.com/jackc/pgx/v5/pgxpool"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
