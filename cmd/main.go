@@ -5,6 +5,7 @@ import (
 
 	"github.com/DeepanshuMishraa/vid-processing-go.git/config"
 	"github.com/DeepanshuMishraa/vid-processing-go.git/db"
+	"github.com/DeepanshuMishraa/vid-processing-go.git/handlers"
 	"github.com/DeepanshuMishraa/vid-processing-go.git/queue"
 	"github.com/DeepanshuMishraa/vid-processing-go.git/utils"
 	"github.com/DeepanshuMishraa/vid-processing-go.git/worker"
@@ -44,11 +45,16 @@ func main() {
 	router := gin.Default()
 	router.SetTrustedProxies(nil)
 
-	router.GET("/health", gin.HandlerFunc(func(c *gin.Context) {
+	api := router.Group("/api/v1")
+
+	api.GET("/health", gin.HandlerFunc(func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"status": "ok",
 		})
 	}))
+	api.POST("/videos", handlers.CreateVideoHandler(rmqConn, dbPool))
+	api.GET("/videos", handlers.GetAllVideosHandler(dbPool))
+	api.GET("/videos/:id", handlers.GetVideoByIdHandler(dbPool))
 
 	router.Run(":" + cfg.PORT)
 }

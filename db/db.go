@@ -20,9 +20,9 @@ func Connect(dbUrl string) (*pgxpool.Pool, error) {
 
 	if err != nil {
 		log.Println("Unable to connect to db")
-		pool.Close()
 		return nil, err
 	}
+	defer pool.Close()
 
 	log.Println("Connected to db")
 
