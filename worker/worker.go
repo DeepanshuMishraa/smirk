@@ -27,6 +27,8 @@ type rendition struct {
 	urlField *string
 }
 
+const maxRetries = 3
+
 func Start(conn *amqp.Connection, db *pgxpool.Pool, r2Svc *types.R2Service) error {
 	msgs, ch, err := queue.Consume(conn)
 	if err != nil {
@@ -44,10 +46,17 @@ func Start(conn *amqp.Connection, db *pgxpool.Pool, r2Svc *types.R2Service) erro
 			continue
 		}
 
-		log.Printf("Processing video %s...", job.VideoID)
+		retryCount := deliveryCount(msg.Headers)
+		if retryCount >= maxRetries {
+			log.Printf("Job %s exceeded max retries (%d), discarding", job.VideoID, maxRetries)
+			msg.Nack(false, false) // discard
+			continue
+		}
+
+		log.Printf("Processing video %s (attempt %d)...", job.VideoID, retryCount+1)
 
 		if err := processJob(db, r2Svc, job); err != nil {
-			log.Printf("Job %s failed: %v — requeueing", job.VideoID, err)
+			log.Printf("Job %s failed (attempt %d): %v — requeueing", job.VideoID, retryCount+1, err)
 			msg.Nack(false, true) // requeue
 			continue
 		}
@@ -57,6 +66,26 @@ func Start(conn *amqp.Connection, db *pgxpool.Pool, r2Svc *types.R2Service) erro
 	}
 
 	return nil
+}
+
+func deliveryCount(headers amqp.Table) int {
+	if headers == nil {
+		return 0
+	}
+	raw, ok := headers["x-delivery-count"]
+	if !ok {
+		return 0
+	}
+	// quorum queues store x-delivery-count as int64
+	switch v := raw.(type) {
+	case int64:
+		return int(v)
+	case int32:
+		return int(v)
+	case int:
+		return v
+	}
+	return 0
 }
 
 func parseJob(body []byte) (*types.VideoJob, error) {

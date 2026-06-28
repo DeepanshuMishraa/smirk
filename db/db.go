@@ -22,7 +22,6 @@ func Connect(dbUrl string) (*pgxpool.Pool, error) {
 		log.Println("Unable to connect to db")
 		return nil, err
 	}
-	defer pool.Close()
 
 	log.Println("Connected to db")
 

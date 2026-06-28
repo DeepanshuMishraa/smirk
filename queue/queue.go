@@ -87,7 +87,9 @@ func Consume(conn *amqp.Connection) (<-chan amqp.Delivery, *amqp.Channel, error)
 		false,
 		false,
 		false,
-		nil,
+		amqp.Table{
+			amqp.QueueTypeArg: amqp.QueueTypeQuorum,
+		},
 	)
 	if err != nil {
 		ch.Close()

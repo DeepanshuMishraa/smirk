@@ -13,9 +13,8 @@ type VideoJob struct {
 }
 
 type CreateVideoRequest struct {
-	VideoID     string `json:"video_id"`
-	Title       string `json:"title"`
-	OriginalUrl string `json:"original_url"`
+	VideoID string `form:"video_id" json:"video_id,omitempty"`
+	Title   string `form:"title" json:"title"`
 }
 
 type CreateVideoResponse struct {

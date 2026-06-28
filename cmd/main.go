@@ -52,7 +52,7 @@ func main() {
 			"status": "ok",
 		})
 	}))
-	api.POST("/videos", handlers.CreateVideoHandler(rmqConn, dbPool))
+	api.POST("/videos", handlers.CreateVideoHandler(rmqConn, dbPool, r2Svc))
 	api.GET("/videos", handlers.GetAllVideosHandler(dbPool))
 	api.GET("/videos/:id", handlers.GetVideoByIdHandler(dbPool))
 

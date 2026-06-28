@@ -43,8 +43,11 @@ func GetAllVideos(db *pgxpool.Pool) ([]models.Video, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	query := `SELECT id, title, original_url, status, created_at, updated_at
-	           FROM videos`
+	query := `SELECT id, title, original_url,
+	                 video_360_url, video_480_url, video_720_url, video_1080_url,
+	                 status, created_at, updated_at
+	           FROM videos
+	           ORDER BY created_at DESC`
 
 	rows, err := db.Query(ctx, query)
 	if err != nil {
@@ -59,6 +62,10 @@ func GetAllVideos(db *pgxpool.Pool) ([]models.Video, error) {
 			&video.ID,
 			&video.Title,
 			&video.OriginalURL,
+			&video.Video360URL,
+			&video.Video480URL,
+			&video.Video720URL,
+			&video.Video1080URL,
 			&video.Status,
 			&video.CreatedAt,
 			&video.UpdatedAt,
@@ -101,7 +108,9 @@ func GetVideoById(db *pgxpool.Pool, id string) (*models.Video, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	query := `SELECT id, title, original_url, status, created_at, updated_at
+	query := `SELECT id, title, original_url,
+	                 video_360_url, video_480_url, video_720_url, video_1080_url,
+	                 status, created_at, updated_at
 	           FROM videos
 	           WHERE id = $1`
 	var video models.Video
@@ -109,6 +118,10 @@ func GetVideoById(db *pgxpool.Pool, id string) (*models.Video, error) {
 		&video.ID,
 		&video.Title,
 		&video.OriginalURL,
+		&video.Video360URL,
+		&video.Video480URL,
+		&video.Video720URL,
+		&video.Video1080URL,
 		&video.Status,
 		&video.CreatedAt,
 		&video.UpdatedAt,
