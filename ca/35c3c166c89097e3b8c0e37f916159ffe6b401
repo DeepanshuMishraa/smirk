@@ -1,0 +1,31 @@
+types/types.go
+  s_e2defa7ac7619a::t_8e9a0b8bd12e77 6-8
+utils/r2.go
+  s_e2defa7ac7619a::t_f53543d4b39c8e 37-39
+repository/video-repository.go
+  s_e2defa7ac7619a::t_2f280f5965024b 11-12,19,22,28
+  s_e2defa7ac7619a::t_0e1a081a9cf606 5,14-18,20-21,23-27,29-31
+  s_e2defa7ac7619a::t_472fdb2470322e 2-4
+  s_e2defa7ac7619a::t_f7cf251705690f 6-10
+  s_e2defa7ac7619a::t_05330e450645bc 13
+  s_e2defa7ac7619a::t_25f8ec14253875 32
+services/video_service.go
+  s_e2defa7ac7619a::t_794394f4136261 2-42
+  s_e2defa7ac7619a::t_0bfc44c179da68 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "ca35c3c166c89097e3b8c0e37f916159ffe6b401",
+  "prompts": {},
+  "sessions": {
+    "s_e2defa7ac7619a": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019f0c59-05d1-7ff0-9637-4296e80e4091",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
