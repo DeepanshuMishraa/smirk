@@ -1,0 +1,28 @@
+types/types.go
+  s_52385b0e26faa2::t_6bfba48c8b7a5c 6-9
+utils/r2.go
+  s_52385b0e26faa2::t_820585c17ebd63 40
+  s_52385b0e26faa2::t_224315f909b31f 37-39
+services/video_service.go
+  s_52385b0e26faa2::t_e7cd0b17414236 35-36
+config/config.go
+  s_52385b0e26faa2::t_252f5a52812195 17,34,37,48
+worker/worker.go
+  s_52385b0e26faa2::t_a3b48bcf072c0c 213-214
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "cf680799b805ecb68849b66914c4551d740d7567",
+  "prompts": {},
+  "sessions": {
+    "s_52385b0e26faa2": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019f0d08-8e14-7211-b0ce-f6c703d62396",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
