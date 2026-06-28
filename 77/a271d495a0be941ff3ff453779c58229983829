@@ -1,0 +1,32 @@
+worker/worker.go
+  s_52385b0e26faa2::t_de60c0d3660441 3-15,17-20,22-30,32-34,36-192
+  s_52385b0e26faa2::t_dee14664c682a5 31,35
+  s_52385b0e26faa2::t_b16f23a630b71a 21
+  s_52385b0e26faa2::t_e1c0e839774ebf 16
+  s_52385b0e26faa2::t_60f54cac39bb13 1-2
+  s_52385b0e26faa2::t_617a966a266e98 193
+queue/queue.go
+  s_52385b0e26faa2::t_930a88313c62cd 78,81,93-94,107-108,111
+repository/video-repository.go
+  s_52385b0e26faa2::t_8b2d7c0b0ded18 75-99
+utils/r2.go
+  s_52385b0e26faa2::t_7ff0b8e95943ee 61-71
+cmd/main.go
+  s_52385b0e26faa2::t_97214fa7cb6d22 9-10,21,25,27,31-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "77a271d495a0be941ff3ff453779c58229983829",
+  "prompts": {},
+  "sessions": {
+    "s_52385b0e26faa2": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019f0d08-8e14-7211-b0ce-f6c703d62396",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
